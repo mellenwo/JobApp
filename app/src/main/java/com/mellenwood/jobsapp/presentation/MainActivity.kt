@@ -1,14 +1,12 @@
 package com.mellenwood.jobsapp.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.mellenwood.jobsapp.R
-import com.mellenwood.jobsapp.data.JobApiServiceImpl
-import com.mellenwood.jobsapp.data.JobRepositoryImpl
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
-    private val viewModel: JobViewModel = JobViewModel(JobRepositoryImpl(JobApiServiceImpl()))
+    private val viewModel: JobViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

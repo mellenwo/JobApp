@@ -5,7 +5,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class JobApiServiceImpl: JobApiService {
-
     override suspend fun getJobs(): List<Job> {
         val service: JobApiService = createRetrofitService()
         return service.getJobs()
@@ -19,5 +18,4 @@ class JobApiServiceImpl: JobApiService {
 
         return retrofit.create(JobApiService::class.java)
     }
-
 }
