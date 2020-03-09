@@ -10,8 +10,9 @@ import com.mellenwood.jobsapp.domain.Job
 import com.mellenwood.jobsapp.presentation.rv.JobAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : AppCompatActivity() {
+class JobListActivity : AppCompatActivity() {
     private val viewModel: JobViewModel by viewModel()
+
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.jobs.observe(this,
             Observer<List<Job>> { it?.let {
                 adapter.replaceData(it)
-            } }
+            }}
         )
 
         setupRecyclerView()
